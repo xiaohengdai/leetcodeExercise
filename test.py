@@ -1,1 +1,2 @@
-print(str(-121))
+a=[]
+a.sort()
