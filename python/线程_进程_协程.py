@@ -1,4 +1,5 @@
 # Python之协程:https://www.cnblogs.com/russellyoung/p/python-zhi-xie-cheng.html
+#Python threading中event的使用:https://blog.csdn.net/u012067766/article/details/79734630
 
 #-*- coding:utf8 -*-
 import gevent
