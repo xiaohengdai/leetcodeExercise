@@ -16,3 +16,4 @@
 # 比如说它可以通过 send 的方法与生成器内部进行数据交互；还有它可以通过 close 方法去进行关闭；甚至还可以通过 throw 方法，引发内部的异常；
 
 # 如何理解Python中的yield用法?：https://zhuanlan.zhihu.com/p/268605982
+#你知道python迭代器和生成器的区别吗？:http://www.py.cn/toutiao/18163.html
