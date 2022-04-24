@@ -52,7 +52,6 @@
 #
 # 3、mysql偏向于存数据，redis偏向于快速取数据，但redis查询复杂的表关系时不如mysql，所以可以把热门的数据放redis，mysql存基本数据
 
-
 #参考：
 #redis+mysql结合使用：https://blog.csdn.net/qq_37332702/article/details/89163243
 #Redis(一)、Redis五种数据结构：https://www.cnblogs.com/haoprogrammer/p/11065461.html
