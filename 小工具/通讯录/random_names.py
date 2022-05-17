@@ -1,16 +1,22 @@
 #! python3
 # -*- coding: utf-8 -*-
+import os
 import random
 import string
 
-FirstNames    = './Names/FirstNames.txt'
-MiddleNames   = './Names/MiddleNames.txt'
-LastNames     = './Names/LastNames.txt'
-CountyNames   = './Names/CountyNames.txt'
-PlaceNames    = './Names/PlaceNames.txt'
-StateNames    = './Names/StateNames.txt'
-CountryNames  = './Names/CountryNames.txt'
-CompanyNames  = './Names/CompanyNames.txt'
+current_dir=os.getcwd()
+print("current_dir:",current_dir)
+address_book_dir=os.path.join(current_dir,'小工具','通讯录')
+print("address_book_dir:",address_book_dir)
+
+FirstNames    = os.path.join(address_book_dir,'Names','FirstNames.txt')
+MiddleNames   = os.path.join(address_book_dir,'Names','MiddleNames.txt')
+LastNames     = os.path.join(address_book_dir,'Names','LastNames.txt')
+CountyNames   = os.path.join(address_book_dir,'Names','CountyNames.txt')
+PlaceNames    = os.path.join(address_book_dir,'Names','PlaceNames.txt')
+StateNames    = os.path.join(address_book_dir,'Names','StateNames.txt')
+CountryNames  = os.path.join(address_book_dir,'Names','CountryNames.txt')
+CompanyNames  = os.path.join(address_book_dir,'Names','CompanyNames.txt')
 
 
 
@@ -36,6 +42,7 @@ def rawCount(filename):
     Function to get Line Count in txt files.
     rawcount('C:\A.txt') outputs integer value of count of lines.
     """
+    print("filename:",filename)
     with open(filename, 'rb') as f:
         lines = 1
         buf_size = 1024 * 1024
