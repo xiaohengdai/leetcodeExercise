@@ -1,0 +1,1 @@
+使用minicap+python实现录屏功能:https://blog.csdn.net/weixin_42409884/article/details/104512286?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-1-104512286.nonecase
