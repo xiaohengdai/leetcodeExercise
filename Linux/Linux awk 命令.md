@@ -1,0 +1,1 @@
+Linux awk 命令:https://m.runoob.com/linux/linux-comm-awk.html
