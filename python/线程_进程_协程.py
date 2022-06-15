@@ -6,6 +6,9 @@
 #线程同步：Python之Event事件（简单教程）：https://blog.csdn.net/RNG_uzi_/article/details/109395624
 #4、协程的切换开销更小，修改共享数据不需加锁，必须在只有一个单线程里实现并发
 
+
+# 进程间通信：管道、FIFO、消息队列、信号量、共享内存
+
 #-*- coding:utf8 -*-
 import gevent
 
