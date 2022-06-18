@@ -25,23 +25,24 @@ import collections
 import heapq
 class Solution:
     def topKFrequent(self,nums,k):
-        if len(nums)==0:
+        import heapq
+        words = nums
+        if len(words) == 0:
             return []
-        dic=dict()
-        for num in nums:
-            dic[num]=dic.get(num,0)+1
-        li =list()
-
-        for item in dic.items():
-            if len(li)==k:
-                if item[1]>li[0][0]:
-
-                    heapq.heappop(li)
-                    heapq.heappush(li,(item[1],item[0]))
+        di = {}
+        heap = []
+        for i in range(0, len(words)):
+            if di.get(words[i]):
+                di[words[i]] = di[words[i]] + 1
             else:
-                heapq.heappush(li,(item[1],item[0]))
+                di[words[i]] = 1
 
-        return [li[len(li)-i-1][1] for i in range (0,len(li)) ]
+        for key, count in di.items():
+            heapq.heappush(heap, (-count, key))
+        li = []
+        for i in range(0, k):
+            li.append(heapq.heappop(heap)[1])
+        return li
 
 nums=[1,1,1,2,2,3]
 k=2

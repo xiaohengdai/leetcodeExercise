@@ -1,65 +1,27 @@
-#暴力解法：三重for循环对四段值分别判断是否在0到255范围内
+#暴力解法
 # class Solution:
-#     def restoreIpAddresses(self, s: str):
-#         l=len(s)
-#         if l>12 or l<4: return []
-#         arr=[]
-#         for i in range(1,min(4,l-2)):
-#             for j in range(i+1,min(i+4,l-1)):
-#                 for k in range(j+1,min(j+4,l)):
-#                     if l-k>3: continue
-#                     n=[s[:i],s[i:j],s[j:k],s[k:]]
-#                     flag=False
-#                     for c in n:
-#                         if c[0]=='0' and c!='0':
-#                             flag=True
-#                             break
-#                     if flag: continue
-#                     # print(n)
-#                     a,b,c,d=map(int,n)
-#                     if 0<=a<=255 and 0<=b<=255 and 0<=c<=255 and 0<=d<=255:
-#                         arr.append(str(a)+'.'+str(b)+'.'+str(c)+'.'+str(d))
-#         return arr
-
-#dfs
-class Solution:
-    def restoreIpAddresses(self, s: str) -> List[str]:
-        # 特殊情况处理
-        if not s or len(s) < 4:
-            return []
-        # 初始化结果列表
-        res = list()
-        # DFS递归，需要传入字符串s，对s的分割次数（初始为0），划分的中间（最终）结果，最终结果列表res
-        self.dfs(s, 0, '', res)
-        # 返回结果列表
-        return res
-
-    # DFS递归，s为目标字符串，idx为对s的分割次数（也是递归深度），path为划分的中间（最终）结果字符串，res为结果列表
-    def dfs(self, s: str, idx: int, path: str, res: List[str]):
-        # 如果idx大于4，那么说明字符串s已经被分割的次数大于4，此时直接返回
-        if idx > 4:
-            return
-            # 如果idx等于4，那么还要继续判断递归传入的s是否已经为空，如果s为空则说明字符串已经被完全分割为IP地址的形式，此时将该分割方法（路径）存储到结果列表res中，然后返回
-        if idx == 4 and not s:
-            # 这里符合条件的path的形式应该是"xxx.xxx.xxx.xxx."，因此path[:-1]是为了舍弃最后的'.'字符
-            res.append(path[:-1])
-            return
-        # 对s的下标进行遍历
-        for i in range(len(s)):
-            # 后面的if语句用于处理以下两种情况：
-            # （1）当s的首字符为'0'时，可以直接将'0'作为IP地址中四个整数之一
-            # （2）当s的首字符不为'0'时，需要保证s[:i+1]处于IP地址整数的范围之内
-            if s[:i + 1] == '0' or (s[0] != '0' and 0 < int(s[:i + 1]) < 256):
-                # DFS递归调用的参数需要进行以下操作：
-                # （1）将下标i之后的s[i+1:]字符串作为新的s进行递归参数传入
-                # （2）分割次数idx+1
-                # （3）将中间字符串结果path后连接下标i之前的s[:i+1]字符串，并在最后加入'.'
-                # （4）结果列表res依然原封不动的传入下次递归
-                self.dfs(s[i + 1:], idx + 1, path + s[:i + 1] + '.', res)
+#     def restoreIpAddresses(self, s) :
+#         if (len(s) < 4) or (len(s) > 12):
+#             return []
+#         res = []
+#         for first in range(0, 3):
+#             for second in range(first + 1, 6):
+#                 for third in range(second + 1, 9):
+#                     s1 = s[0:first+1]
+#                     s2 = s[first + 1:second+1]
+#                     s3 = s[second + 1:third+1]
+#                     s4 = s[third + 1:]
+#                     if (len(s1)>0)and(len(s2)>0)and(len(s3)>0)and(len(s4)>0)and(s1 != '00') and (s1 != '000') and (s2 != '00') and (s2 != '000') and (s3 != '00') and (
+#                             s3 != '000')and (s4 != '00') and (s4 != '000') and (int(s1) <= 255) and (int(s2) <= 255) and (int(s3) <= 255) and (int(s4) <= 255) \
+#                             and (int(s1) >= 0) and (int(s2) >= 0) and (int(s3) >= 0) and (int(s4) >= 0):
+#                         find_s = s1 + '.' + s2 + '.' + s3 + '.' + s4
+#                         if ((len(s1)>1)and( s1.startswith('0')))or ((len(s2)>1)and( s2.startswith('0')))or((len(s3)>1)and( s3.startswith('0')))or((len(s4)>1)and( s4.startswith('0'))):
+#                             continue
+#                         if len(find_s) == len(s) + 3:
+#                             res.append(s1 + '.' + s2 + '.' + s3 + '.' + s4)
+#         return res
 
 
-# 作者：hughtang
-# 链接：https: // leetcode.cn / problems / restore - ip - addresses / solution / python - 24
-# ms - zui - jian - jie - yi - dong - de - hui - esrwe /
-# 来源：力扣（LeetCode）
-# 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+value=Solution().restoreIpAddresses(s='101023')
+print("value:",value)
