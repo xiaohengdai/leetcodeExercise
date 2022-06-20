@@ -1,0 +1,245 @@
+<div v-for="item in signalVideoInfo" :key="item">
+      <div>
+        <ks-row>
+          <ks-col :span="24"
+          ><h3 class="grid-content bg-purple-dark">
+            检测详情-视频
+          </h3></ks-col
+          >
+        </ks-row>
+
+        <ks-row>
+          <div class="box1">
+            <ks-table
+                class="lastTable"
+                :data="item"
+                :span-method="arraySpanMethod"
+                style="width: 100%"
+                border
+            >
+              <ks-table-column
+                  prop="time_consuming_results"
+                  label="耗时/ms"
+                  width="100"
+                  align="center"
+              ></ks-table-column>
+              <ks-table-column
+                  label="开始帧-2"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.start_frame_image1"
+                      :preview-src-list="[scope.row.start_frame_image1]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="开始帧-1"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.start_frame_image2"
+                      :preview-src-list="[scope.row.start_frame_image2]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="开始帧"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.start_frame_image3"
+                      :preview-src-list="[scope.row.start_frame_image3]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="开始帧+1"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.start_frame_image4"
+                      :preview-src-list="[scope.row.start_frame_image4]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="开始帧+2"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.start_frame_image5"
+                      :preview-src-list="[scope.row.start_frame_image5]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="结束帧-2"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.end_frame_image1"
+                      :preview-src-list="[scope.row.end_frame_image1]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+
+              <ks-table-column
+                  label="结束帧-1"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.end_frame_image2"
+                      :preview-src-list="[scope.row.end_frame_image2]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+              <ks-table-column
+                  label="结束帧"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.end_frame_image3"
+                      :preview-src-list="[scope.row.end_frame_image3]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+              <ks-table-column
+                  label="结束帧+1"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.end_frame_image4"
+                      :preview-src-list="[scope.row.end_frame_image4]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+              <ks-table-column
+                  label="结束帧+2"
+                  width="200"
+                  align="center"
+              >
+                <template v-slot:default="scope">
+                  <ks-image
+                      :src="scope.row.end_frame_image5"
+                      :preview-src-list="[scope.row.end_frame_image5]"
+                      fit="fill"
+                  ></ks-image>
+                </template>
+              </ks-table-column>
+            </ks-table>
+          </div>
+        </ks-row>
+        <ks-row>
+          <ks-col :span="24"
+          ><h3 class="grid-content bg-purple-dark">
+            查看任务具体拆帧情形
+          </h3></ks-col
+          >
+          <ks-table
+              :data="resultTable"
+              border
+              style="width: 100%">
+            <ks-table-column
+                prop="frame_num"
+                label="帧号"
+                width="100"
+                align="center"
+            ></ks-table-column>
+
+            <ks-table-column
+                label="图片"
+                width="200"
+                align="center"
+            >
+              <template v-slot:default="scope">
+                <ks-image
+                    :src="scope.row.img_src"
+                    :preview-src-list="[scope.row.img_src]"
+                    fit="fill"
+                ></ks-image>
+              </template>
+            </ks-table-column>　　
+          </ks-table>
+          <ks-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                         :current-page="queryInfo.pagenum" :page-sizes="[  5, 10,20,30]"
+                         :page-size="queryInfo.pagesize" :total="total"
+                         layout="total, sizes,  pager,  jumper">
+          </ks-pagination>
+        </ks-row>
+        <ks-row>
+          <ks-col :span="24"
+          ><h3 class="grid-content bg-purple-dark">
+            人工校准
+          </h3>
+          </ks-col>
+          <ks-row :gutter="20" class="margins">
+          <!-- 动态生成 -->
+          <div style="margin: 50px auto;width: 800px;">
+            <ks-form ref="form"  :model="mainFormData" label-width="80px">
+              <ks-col :span="12" v-for="(item,index) in formItemList" :key="index">
+                <ks-form-item   :label=item.label>
+                  <ks-input v-model="mainFormData[item.key]"></ks-input>
+                </ks-form-item>
+              </ks-col>
+              <ks-col>
+                <ks-form-item label="设备型号(model)" prop="model">
+                  <ks-input v-model="mainFormData.model" placeholder="支持校准设备型号（不校准设备型号的话可以不填）"></ks-input>
+                </ks-form-item>
+              </ks-col>
+              <ks-col>
+                <ks-form-item label="app包名(app_name)" prop="app_name">
+                  <ks-input v-model="mainFormData.app_name" placeholder="支持校准app包名（不校准ap包名的话可以不填）"></ks-input>
+                </ks-form-item>
+              </ks-col>
+              <ks-col>
+                <ks-form-item label="校准原因" prop="reason">
+                  <ks-input v-model="mainFormData.reason" placeholder="校准原因（记得填下）"></ks-input>
+                </ks-form-item>
+              </ks-col>
+              <ks-col>
+              <ks-form-item>
+                <ks-button type="primary" @click="submitForm('mainFormData')">确认人工校准</ks-button>
+
+              </ks-form-item>
+              </ks-col>
+            </ks-form>
+          </div>
+
+        </ks-row>
+
+        </ks-row>
+      </div>
+    </div>
