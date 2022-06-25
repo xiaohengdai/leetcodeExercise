@@ -1,4 +1,4 @@
-res=[]
-path=[2, 2, 3]
-res.append(path[:])
-print(res)
+a='e'
+b='b'
+print(a.isalpha())
+print("e" )
