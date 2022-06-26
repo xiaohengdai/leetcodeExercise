@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="82f0a679-bbc3-476c-b901-e4817f597aec" name="Default Changelist" comment="add content">
       <change afterPath="$PROJECT_DIR$/10.vcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/专项/Crash.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/管理经验/优缺点.md" beforeDir="false" afterPath="$PROJECT_DIR$/管理经验/优缺点.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/质量度量_流程规范/指标和形式.md" beforeDir="false" afterPath="$PROJECT_DIR$/质量度量_流程规范/指标和形式.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/管理经验及个人规划/您还有哪些要问的问题么？.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,13 +321,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641293306603</updated>
-    </task>
-    <task id="LOCAL-00020" summary="增加Python 直接赋值、浅拷贝和深度拷贝解析">
-      <created>1648898279557</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1648898279558</updated>
     </task>
     <task id="LOCAL-00021" summary="增加Python 直接赋值、浅拷贝和深度拷贝解析">
       <created>1649588266766</created>
@@ -668,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656157358144</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="add content">
+      <created>1656225899107</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1656225899112</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
